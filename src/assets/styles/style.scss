@@ -1,0 +1,109 @@
+@mixin buttonMix($color) {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    color: #FFF;
+    background-color: $color;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    font-family: cursive;
+}
+
+
+.container {
+    background-color: aliceblue;
+    width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+
+    h1 {
+        text-align: center;
+        font-family: cursive;
+    }
+
+    .addTask {
+        border: 1px solid rgb(184, 184, 184);
+        padding: 20px;
+
+        .input {
+            display: flex;
+            margin-bottom: 20px;
+
+            i {
+                font-size: 20px;
+                color: #FFF; 
+                background-color: #16A3B7; 
+                padding: 6px; 
+                border-bottom-left-radius: 10%;
+            }
+        }
+
+        input {
+            width: 98%;
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-top-right-radius: 4px;
+            padding: 8px;
+        }
+
+        .addButton {
+            width: 100%;
+            @include buttonMix(#16A3B7)
+        }
+    }
+
+    .ToDoListButtons {
+        text-align: center;
+
+        button {
+            width: 25%;
+            margin: 20px;
+            @include buttonMix(#16A3B7)
+        }
+
+    }
+
+    .ToDo-List {
+        .task-value {
+            border: 1px solid rgb(184, 184, 184);
+            padding: 5px;
+            margin-bottom: 3px;
+            font-family: cursive;
+
+            .content-P {
+                display: flex;
+                font-size: 18px;
+                font-weight: bold;
+                text-decoration: none;
+
+                .create-P {
+                    margin-left: auto;
+
+                    .fas {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .contDelete {
+            text-align: center;
+        }
+
+        .deleteButtons {
+            width: 40%;
+            margin: 20px;
+            @include buttonMix(#B6303D)
+        }
+    }
+
+    
+}
+
