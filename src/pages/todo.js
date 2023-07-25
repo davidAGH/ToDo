@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function ToDo() {
     const [newValue, setnewValue] = useState("");
@@ -14,6 +14,17 @@ export function ToDo() {
 
     const [showDone, setShowDone] = useState(true);
     const [showTodo, setShowTodo] = useState(true);
+
+    useEffect(() => {
+        const savedList = localStorage.getItem("todoList");
+        if (savedList) {
+            setList(JSON.parse(savedList));
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("todoList", JSON.stringify(list));
+    }, [list]);
 
     const handleChange = (e) => {
         setnewValue(e.target.value);
