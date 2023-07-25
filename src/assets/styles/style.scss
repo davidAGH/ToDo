@@ -15,6 +15,21 @@
     font-family: cursive;
 }
 
+@mixin buttonEdit($color) {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    color: #FFF;
+    background-color: $color;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    font-family: cursive;
+}
 
 .container {
     background-color: aliceblue;
@@ -83,11 +98,34 @@
                 font-weight: bold;
                 text-decoration: none;
 
+                del {
+                    color: red;
+                }
+
                 .create-P {
                     margin-left: auto;
 
                     .fas {
                         font-size: 20px;
+                    }
+
+                    .checkbox {
+                        width: 18px;
+                        height: 18px;
+                    }
+
+                    .save {
+                        @include buttonEdit(#16A3B7)
+                    }
+
+                    .cancel {
+                        @include buttonEdit(#B6303D)
+                    }
+
+                    .buttonForID {
+                        background-color: transparent;
+                        border: none;
+                        cursor: pointer;
                     }
                 }
             }
